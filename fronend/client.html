@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="stylesheet" href="./style.css">
+  <title>Chat App</title>
+
+</head>
+<body>
+  <div id="app">
+    <!-- Registration Screen -->
+    <div id="register-screen" class="screen active">
+      <h2>Register</h2>
+      <input type="text" id="username" placeholder="Enter your name">
+      <button onclick="registerUser()">Register</button>
+    </div>
+
+    <!-- Online Users Screen -->
+    <div id="user-list-screen" class="screen">
+      <h2>Online Users</h2>
+      <ul id="user-list"></ul>
+    </div>
+
+    <!-- Chat Window Screen -->
+    <div id="chat-window-screen" class="screen">
+    <button onclick="goBack()">Back</button>
+    <button onclick="clearChat()">Clear Chat</button> <!-- Clear Chat Button -->
+    <h2 id="chat-header"></h2>
+    <div id="chat-window" class="chat-window"></div>
+    <div id="typing-indicator" class="typing-indicator"></div>
+    <div style="display: flex; width: 100%;">
+        <input type="text" id="message-input" placeholder="Type a message..." onkeypress="handleTyping()" onkeyup="if(event.key === 'Enter') sendMessage()">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+    <!-- Add this audio element for notification sound -->
+  <audio id="notification-sound" src="./notification.mp3" preload="auto"></audio>
+
+
+<script src="./script.js"></script>
+</body>
+</html>   
+
